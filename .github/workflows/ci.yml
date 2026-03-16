@@ -16,6 +16,6 @@ jobs:
                 password: ${{ secrets.DOCKER_PASSWORD }}
     
             - name: Build Docker image
-              run: docker compose --build up ${{ secrets.DOCKER_USERNAME }}/DOCKCOM:v2 .
+              run: docker compose build  ${{ secrets.DOCKER_USERNAME }}/DOCKCOM:v2 .
             - name: Push Docker image
               run: docker compose push ${{ secrets.DOCKER_USERNAME }}/DOCKCOM:v2
